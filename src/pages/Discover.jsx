@@ -1,14 +1,14 @@
 import { Error, Loader, SongCard } from "../components";
 import { genres } from "../assets/constants";
+import testdata from "../assets/test.json";
 
 import { useGetTopTracksQuery } from "../redux/services/spotifyApi";
 
 export default function Discover() {
     // const { data, error, isLoading } = useGetTopTracksQuery();
     // console.log(data);
-
-
-    // if(isLoading) return <Loader />
+    
+    // if (isLoading) return <Loader title=" loading songs ......" />;
     // if(error) return <Error />
 
     const genreTitle = "Pop";
@@ -32,8 +32,8 @@ export default function Discover() {
                 </select>
 
                 <div className=" flex flex-wrap sm:justify-start justify-center gap-8">
-                    {[1, 2, 3, 4, 5, 6, 7, 8, 9, 10].map((song, i) => (
-                        <SongCard key={i} />
+                    {testdata.tracks.map((song, i) => (
+                        <SongCard key={i} songs={testdata.tracks} i={i}/>
                     ))}
                 </div>
             </div>

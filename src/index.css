@@ -2,42 +2,120 @@
 @tailwind components;
 @tailwind utilities;
 
+.bg-gray-100 {
+    background-color: var(--dark-gray);
+}
+
+.black {
+    background-color: var(--black);
+}
+.green {
+    background-color: var(--green);
+}
+.dark-gray {
+    background-color: var(--dark-gray);
+}
+.gray {
+    background-color: var(--gray);
+}
+.light-gray {
+    background-color: var(--light-gray);
+}
+:root {
+    --green: #1db954;
+    --dark-gray: #212121;
+    --black: #121212;
+    --gray: #535353;
+    --light-greay: #b3b3b3;
+}
+
 /* Active Navigation Link */
 .active {
-  @apply text-cyan-500;
+    @apply text-cyan-500;
 }
 
 .active svg {
-  @apply text-cyan-500;
+    @apply text-cyan-500;
 }
 
 .bar:nth-child(2) {
-  animation-delay: 0.2s;
+    animation-delay: 0.2s;
 }
 .bar:nth-child(3) {
-  animation-delay: 0.4s;
+    animation-delay: 0.4s;
 }
 .bar:nth-child(4) {
-  animation-delay: 0.6s;
+    animation-delay: 0.6s;
 }
 .bar:nth-child(5) {
-  animation-delay: 0.8s;
+    animation-delay: 0.8s;
 }
 .bar:nth-child(6) {
-  animation-delay: 1s;
+    animation-delay: 1s;
 }
 
 .smooth-transition {
-  transition: all 0.3s ease-in-out;
+    transition: all 0.3s ease-in-out;
 }
 
 /* Hide scrollbar for Chrome, Safari and Opera */
 .hide-scrollbar::-webkit-scrollbar {
-  display: none;
+    display: none;
 }
 
 /* Hide scrollbar for IE, Edge and Firefox */
 .hide-scrollbar {
-  -ms-overflow-style: none; /* IE and Edge */
-  scrollbar-width: none; /* Firefox */
+    -ms-overflow-style: none; /* IE and Edge */
+    scrollbar-width: none; /* Firefox */
+}
+
+.dots-bars-2 {
+    width: 50px;
+    height: 50px;
+    --c: linear-gradient(currentColor 0 0);
+    --r1: radial-gradient(
+        farthest-side at bottom,
+        currentColor 93%,
+        transparent
+    );
+    --r2: radial-gradient(farthest-side at top, currentColor 93%, transparent);
+    background: var(--c), var(--r1), var(--r2), var(--c), var(--r1), var(--r2),
+        var(--c), var(--r1), var(--r2);
+    background-repeat: no-repeat;
+    animation: db2 1s infinite alternate;
+    color: var(--green);
+    border-radius: 4px;
+}
+
+@keyframes db2 {
+    0%,
+    25% {
+        background-size: 8px 0, 8px 4px, 8px 4px, 8px 0, 8px 4px, 8px 4px, 8px 0,
+            8px 4px, 8px 4px;
+        background-position: 0 50%, 0 calc(50% - 2px), 0 calc(50% + 2px),
+            50% 50%, 50% calc(50% - 2px), 50% calc(50% + 2px), 100% 50%,
+            100% calc(50% - 2px), 100% calc(50% + 2px);
+    }
+    50% {
+        background-size: 8px 100%, 8px 4px, 8px 4px, 8px 0, 8px 4px, 8px 4px,
+            8px 0, 8px 4px, 8px 4px;
+        background-position: 0 50%, 0 calc(0% - 2px), 0 calc(100% + 2px),
+            50% 50%, 50% calc(50% - 2px), 50% calc(50% + 2px), 100% 50%,
+            100% calc(50% - 2px), 100% calc(50% + 2px);
+    }
+    75% {
+        background-size: 8px 100%, 8px 4px, 8px 4px, 8px 100%, 8px 4px, 8px 4px,
+            8px 0, 8px 4px, 8px 4px;
+        background-position: 0 50%, 0 calc(0% - 2px), 0 calc(100% + 2px),
+            50% 50%, 50% calc(0% - 2px), 50% calc(100% + 2px), 100% 50%,
+            100% calc(50% - 2px), 100% calc(50% + 2px);
+    }
+    95%,
+    100% {
+        background-size: 8px 100%, 8px 4px, 8px 4px, 8px 100%, 8px 4px, 8px 4px,
+            8px 100%, 8px 4px, 8px 4px;
+        background-position: 0 50%, 0 calc(0% - 2px), 0 calc(100% + 2px),
+            50% 50%, 50% calc(0% - 2px), 50% calc(100% + 2px), 100% 50%,
+            100% calc(0% - 2px), 100% calc(100% + 2px);
+    }
 }
