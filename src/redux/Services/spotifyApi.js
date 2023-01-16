@@ -22,7 +22,7 @@ export const spotifyApi = createApi({
     }),
     endpoints: (builder) => ({
         getTopTracks: builder.query({
-            query: () => "chart/tracks/top?type=weekly",
+            query: () => "chart/tracks/top",
         }),
         getAlbums: builder.query({
             query: () => "",
